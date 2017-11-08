@@ -6,7 +6,7 @@
 /*   By: asarandi <asarandi@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 17:27:23 by asarandi          #+#    #+#             */
-/*   Updated: 2017/11/07 17:34:31 by asarandi         ###   ########.fr       */
+/*   Updated: 2017/11/08 12:10:11 by asarandi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,12 @@ int	print_sudoku(char tab[9][9])
 	{
 		j = 0;
 		while (j < 9)
-			write(1, &tab[i][j++], 1);
+		{
+			write(1, &tab[i][j], 1);
+			if (j < 8)
+				write(1, " ", 1);
+			j++;
+		}
 		write(1, "\n", 1);
 		i++;
 	}
